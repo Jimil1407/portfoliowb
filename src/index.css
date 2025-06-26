@@ -99,9 +99,100 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Optimize for smooth scrolling */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 }
 
+/* Enhanced Smooth Scrolling with Performance Optimizations */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Account for fixed navbar */
+  /* Hardware acceleration for smoother scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* For browsers that don't support scroll-behavior: smooth */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Optimize fixed elements for better performance */
+.fixed {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Specific navbar styling */
+nav {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+/* Smooth scrolling utilities */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.scroll-auto {
+  scroll-behavior: auto;
+}
+
+/* Section spacing for better visual separation */
+section {
+  scroll-margin-top: 100px;
+  /* Optimize sections for better performance */
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+/* Optimize animations for better performance */
+.animate-fade-in {
+  will-change: opacity, transform;
+}
+
+/* Reduce repaints during scroll */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize backdrop blur for better performance */
+.backdrop-blur-2xl {
+  will-change: backdrop-filter;
 }

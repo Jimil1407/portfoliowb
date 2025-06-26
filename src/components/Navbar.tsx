@@ -1,9 +1,10 @@
 import { Github, Linkedin, Moon, Sun, FileText, User, Home, Briefcase, Mail, Map, Code2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
+import { useActiveSection } from '@/hooks/use-active-section';
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState('home');
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
@@ -12,6 +13,8 @@ const Navbar = () => {
   });
 
   const location = useLocation();
+  const { scrollToSection } = useSmoothScroll();
+  const activeSection = useActiveSection();
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -33,6 +36,23 @@ const Navbar = () => {
     { id: 'contact', label: 'Contact', path: '/#contact', icon: Mail },
   ];
 
+  const handleNavClick = (item: typeof navItems[0], e: React.MouseEvent) => {
+    if (item.id === 'journey') {
+      // For external routes, don't prevent default - let the Link handle it
+      return;
+    }
+    
+    // For hash links, prevent default and use smooth scrolling
+    e.preventDefault();
+    
+    if (location.pathname === '/') {
+      scrollToSection(item.id);
+    } else {
+      // If we're not on the home page, navigate to home with hash
+      window.location.href = `/#${item.id}`;
+    }
+  };
+
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
@@ -41,8 +61,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in">
-      <div className="bg-black/30 backdrop-blur-2xl border border-white/20 rounded-full px-4 py-2 shadow-2xl">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-in" style={{ transform: 'translateX(-50%)' }}>
+      <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-full px-4 py-2 shadow-2xl">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
             {navItems.map((item) => {
@@ -51,7 +71,7 @@ const Navbar = () => {
                 <Link
                   key={item.id}
                   to={item.path}
-                  onClick={() => setActiveSection(item.id)}
+                  onClick={(e) => handleNavClick(item, e)}
                   className={`p-2 rounded-lg transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 ${
                     (location.pathname === item.path || 
                      (item.id === 'home' && location.pathname === '/') ||

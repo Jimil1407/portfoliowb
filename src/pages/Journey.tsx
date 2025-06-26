@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Journey = () => {
   const journeySteps = [
@@ -71,6 +72,7 @@ const Journey = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

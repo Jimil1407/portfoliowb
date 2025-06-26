@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import ScrollToTop from '@/components/ScrollToTop';
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -67,6 +68,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };
