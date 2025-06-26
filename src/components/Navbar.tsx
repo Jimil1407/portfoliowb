@@ -1,5 +1,4 @@
-
-import { Github, Linkedin, Moon, FileText, User, Home, Briefcase, Mail } from 'lucide-react';
+import { Github, Linkedin, Moon, FileText, User, Home, Briefcase, Mail, Map } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -10,15 +9,15 @@ const Navbar = () => {
   const navItems = [
     { id: 'home', label: 'Home', path: '/', icon: Home },
     { id: 'about', label: 'About', path: '/about', icon: User },
-    { id: 'journey', label: 'Journey', path: '/journey', icon: Briefcase },
+    { id: 'journey', label: 'Journey', path: '/journey', icon: Map },
     { id: 'projects', label: 'Projects', path: '/#projects', icon: Briefcase },
-    { id: 'contact', label: 'Contact', path: '/#contact', icon: Mail },
+    { id: 'contact', label: 'Contact', path: '/contact', icon: Mail },
   ];
 
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = '/resume.pdf';
-    link.download = 'Jimil_Mansoori_Resume.pdf';
+    link.download = 'Jimil_Resume.pdf';
     link.click();
   };
 
@@ -68,7 +67,7 @@ const Navbar = () => {
               <Github size={18} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/jimil-digaswala-b44973192/?trk=public-profile-join-page"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"

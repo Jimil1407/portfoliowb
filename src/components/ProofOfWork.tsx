@@ -1,4 +1,3 @@
-
 import { Globe, Github } from 'lucide-react';
 
 const ProofOfWork = () => {
@@ -51,64 +50,58 @@ const ProofOfWork = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 gap-6 w-full max-w-3xl mx-auto">
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className="group bg-black border border-gray-800 rounded-2xl p-8 hover:border-gray-700 transition-all duration-500 hover:transform hover:scale-[1.02] animate-fade-in"
+              className="group relative bg-black rounded-2xl overflow-hidden p-[2px] animate-fade-in w-full aspect-square"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex items-start justify-between mb-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-2xl border border-gray-800">
-                    {project.icon}
+              {/* Animated Gradient Border */}
+              <div className="absolute inset-0 rounded-2xl pointer-events-none z-0 animate-gradient-move bg-[conic-gradient(from_0deg,_#fff_0deg,_#f59e42_90deg,_#fff_180deg,_#f59e42_270deg,_#fff_360deg)]"></div>
+              {/* Card Content */}
+              <div className="relative z-10 bg-black rounded-2xl h-full flex flex-col p-4">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center text-xl border border-gray-800">
+                      {project.icon}
+                    </div>
+                    <h3 className="text-xl font-extrabold text-white">
+                      {project.title}
+                    </h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-gray-300 transition-all duration-300">
-                    {project.title}
-                  </h3>
                 </div>
-              </div>
-              
-              <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-8">
-                {project.tech.map((tech) => (
-                  <span 
-                    key={tech}
-                    className="bg-gray-900 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-800"
+                <p className="text-gray-300 mb-4 leading-relaxed text-left text-sm">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6 text-left">
+                  {project.tech.map((tech) => (
+                    <span 
+                      key={tech}
+                      className="px-3 py-1 rounded-full text-xs border border-white text-white bg-transparent"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex space-x-3 mt-auto">
+                  <a 
+                    href={project.live}
+                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-full transition-all duration-200 hover:scale-105 text-xs font-semibold border border-white relative group shadow-sm hover:shadow-md min-h-[36px]"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="flex space-x-4">
-                <a 
-                  href={project.live}
-                  className="relative flex-1 flex items-center justify-center space-x-2 bg-black text-white py-2.5 px-4 rounded-lg font-medium group/btn overflow-hidden"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 p-[1px]">
-                    <div className="h-full w-full bg-black rounded-lg flex items-center justify-center space-x-2">
-                      <Globe size={16} />
-                      <span>Website</span>
-                    </div>
-                  </div>
-                </a>
-                <a 
-                  href={project.github}
-                  className="relative flex-1 flex items-center justify-center space-x-2 bg-black text-white py-2.5 px-4 rounded-lg font-medium group/btn overflow-hidden"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-gray-600 to-gray-400 p-[1px]">
-                    <div className="h-full w-full bg-black rounded-lg flex items-center justify-center space-x-2">
-                      <Github size={16} />
-                      <span>Source</span>
-                    </div>
-                  </div>
-                </a>
+                    <Globe size={14} />
+                    Website
+                  </a>
+                  <a 
+                    href={project.github}
+                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-full transition-all duration-200 hover:scale-105 text-xs font-semibold border border-white relative group shadow-sm hover:shadow-md min-h-[36px]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github size={14} />
+                    Source
+                  </a>
+                </div>
               </div>
             </div>
           ))}

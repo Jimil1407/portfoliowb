@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = "Hi, I'm Fardeen Mansoori";
+  const fullText = "Hi, I'm Jimil";
   
   useEffect(() => {
     let index = 0;
@@ -35,8 +35,9 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-500">
-          19, I break things, learn fast, and make shit happen. Deep into code and CS; anything that 
-          pushes the limits. History, curiosity, cricket, and great books shaped me. Still chasing mastery.
+          22, interested in ML, DevOps ,coding, anything which brings a change. My other interests also include cricket, football
+          & geopolitics. If you're building something, let's connect.
+
         </p>
         
         <p className="text-lg text-gray-400 mb-12 animate-fade-in delay-700">

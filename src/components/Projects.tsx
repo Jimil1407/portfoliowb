@@ -74,49 +74,54 @@ const Projects = () => {
           {featuredProjects.map((project, index) => (
             <div 
               key={project.title}
-              className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl animate-fade-in"
+              className="group relative bg-black rounded-2xl overflow-hidden p-[2px] animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center relative overflow-hidden">
-                <div className="text-6xl group-hover:scale-110 transition-transform duration-500">
+              {/* Gradient Border */}
+              <div className="absolute inset-0 rounded-2xl pointer-events-none z-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500"></div>
+              {/* Card Content */}
+              <div className="relative z-10 bg-black rounded-2xl h-full flex flex-col p-7">
+                <div className="h-12 w-12 flex items-center justify-center mb-4 text-3xl">
                   {project.image}
                 </div>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-2xl font-extrabold text-white mb-3 text-left">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
+                <p className="text-gray-300 mb-4 text-base leading-relaxed text-left">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6 text-left">
                   {project.tech.map((tech) => (
                     <span 
                       key={tech}
-                      className="bg-gray-700/50 text-gray-300 px-3 py-1 rounded-full text-xs border border-gray-600 hover:border-blue-500 transition-colors"
+                      className="px-3 py-1 rounded-full text-xs border border-white text-white bg-transparent"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                
-                <div className="flex space-x-4">
-                  <a 
-                    href={project.github}
-                    className="flex-1 text-center bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 text-sm font-medium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Code
-                  </a>
+                <div className="flex space-x-4 mt-auto">
                   <a 
                     href={project.live}
-                    className="flex-1 text-center bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 text-sm font-medium"
+                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 text-sm font-semibold border-2 border-transparent bg-clip-padding relative group shadow-sm hover:shadow-md"
+                    style={{ borderImage: 'linear-gradient(90deg, #22d3ee, #6366f1, #a21caf) 1' }}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live Demo
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                    Website
+                  </a>
+                  <a 
+                    href={project.github}
+                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 text-sm font-semibold border-2 border-transparent bg-clip-padding relative group shadow-sm hover:shadow-md"
+                    style={{ borderImage: 'linear-gradient(90deg, #22d3ee, #6366f1, #a21caf) 1' }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h9.75A2.25 2.25 0 0019.5 18.75V11.25A2.25 2.25 0 0017.25 9H15.75z" />
+                    </svg>
+                    Source
                   </a>
                 </div>
               </div>
