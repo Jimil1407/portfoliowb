@@ -24,7 +24,7 @@ const Education = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900" id="education">
+    <section className="py-20 bg-black" id="education">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Education</h2>

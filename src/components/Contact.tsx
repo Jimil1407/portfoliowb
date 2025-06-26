@@ -1,3 +1,5 @@
+import { Mail, Linkedin, Github } from 'lucide-react';
+
 const Contact = () => {
   return (
     <section className="py-20 bg-black" id="contact">
@@ -9,19 +11,19 @@ const Contact = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors">
-            <div className="text-3xl mb-4">📧</div>
+            <div className="mb-4 flex justify-center"><Mail size={32} /></div>
             <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
             <p className="text-gray-400">fardeen@example.com</p>
           </div>
           
           <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors">
-            <div className="text-3xl mb-4">💼</div>
+            <div className="mb-4 flex justify-center"><Linkedin size={32} /></div>
             <h3 className="text-lg font-semibold text-white mb-2">LinkedIn</h3>
             <p className="text-gray-400">Connect with me</p>
           </div>
           
           <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors">
-            <div className="text-3xl mb-4">🐙</div>
+            <div className="mb-4 flex justify-center"><Github size={32} /></div>
             <h3 className="text-lg font-semibold text-white mb-2">GitHub</h3>
             <p className="text-gray-400">Check out my code</p>
           </div>

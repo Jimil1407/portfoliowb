@@ -1,10 +1,29 @@
-import { Github, Linkedin, Moon, FileText, User, Home, Briefcase, Mail, Map, Code2 } from 'lucide-react';
-import { useState } from 'react';
+import { Github, Linkedin, Moon, Sun, FileText, User, Home, Briefcase, Mail, Map, Code2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    }
+    return 'dark';
+  });
+
   const location = useLocation();
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   const navItems = [
     { id: 'home', label: 'Home', path: '/#home', icon: Home },
@@ -23,7 +42,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in">
-      <div className="bg-black/30 backdrop-blur-2xl border border-white/20 rounded-xl px-4 py-2 shadow-2xl">
+      <div className="bg-black/30 backdrop-blur-2xl border border-white/20 rounded-full px-4 py-2 shadow-2xl">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
             {navItems.map((item) => {
@@ -74,8 +93,12 @@ const Navbar = () => {
             >
               <Linkedin size={18} />
             </a>
-            <button className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg">
-              <Moon size={18} />
+            <button
+              onClick={toggleTheme}
+              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              title="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
         </div>
