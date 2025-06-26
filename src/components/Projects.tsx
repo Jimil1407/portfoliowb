@@ -60,7 +60,7 @@ const Projects = () => {
   const otherProjects = projects.filter(project => !project.featured);
 
   return (
-    <section className="py-20 bg-gray-900" id="projects">
+    <section className="py-20 bg-black" id="projects">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Featured Projects</h2>
@@ -78,7 +78,7 @@ const Projects = () => {
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Gradient Border */}
-              <div className="absolute inset-0 rounded-2xl pointer-events-none z-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500"></div>
+              <div className="absolute inset-0 rounded-2xl pointer-events-none z-0 bg-gradient-to-r from-black via-black to-black"></div>
               {/* Card Content */}
               <div className="relative z-10 bg-black rounded-2xl h-full flex flex-col p-7">
                 <div className="h-12 w-12 flex items-center justify-center mb-4 text-3xl">
@@ -137,7 +137,7 @@ const Projects = () => {
           {otherProjects.map((project, index) => (
             <div 
               key={project.title}
-              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-[1.02] animate-fade-in"
+              className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-[1.02] animate-fade-in"
               style={{ animationDelay: `${600 + index * 100}ms` }}
             >
               <div className="flex items-center mb-4">
@@ -149,7 +149,7 @@ const Projects = () => {
                 {project.tech.map((tech) => (
                   <span 
                     key={tech}
-                    className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs"
+                    className="bg-black/60 text-gray-300 px-2 py-1 rounded text-xs"
                   >
                     {tech}
                   </span>

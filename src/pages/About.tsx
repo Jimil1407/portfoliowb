@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +15,7 @@ const About = () => {
           </div>
           
           <div className="prose prose-invert max-w-none animate-fade-in" style={{ animationDelay: '200ms' }}>
-            <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 mb-8">
+            <div className="bg-black/80 p-8 rounded-2xl border border-gray-800 mb-8">
               <h2 className="text-2xl font-bold text-white mb-6">My Story</h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Started coding in 2022, fell in love with the process of turning ideas into reality. 
@@ -35,23 +34,23 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800">
+            <div className="bg-black/80 p-8 rounded-2xl border border-gray-800">
               <h2 className="text-2xl font-bold text-white mb-6">What Drives Me</h2>
               <ul className="text-gray-300 space-y-4">
                 <li className="flex items-start space-x-3">
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-white/60 mt-1">•</span>
                   <span>Building products that users love and find valuable</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-white/60 mt-1">•</span>
                   <span>Continuous learning and staying updated with latest technologies</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-white/60 mt-1">•</span>
                   <span>Contributing to open source and helping the developer community</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <span className="text-blue-400 mt-1">•</span>
+                  <span className="text-white/60 mt-1">•</span>
                   <span>Creating efficient, scalable, and maintainable code</span>
                 </li>
               </ul>

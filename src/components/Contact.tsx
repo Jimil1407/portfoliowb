@@ -1,7 +1,6 @@
-
 const Contact = () => {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black" id="contact">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something Together</h2>
         <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -9,19 +8,19 @@ const Contact = () => {
         </p>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-gray-700 transition-colors">
+          <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors">
             <div className="text-3xl mb-4">📧</div>
             <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
             <p className="text-gray-400">fardeen@example.com</p>
           </div>
           
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-gray-700 transition-colors">
+          <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors">
             <div className="text-3xl mb-4">💼</div>
             <h3 className="text-lg font-semibold text-white mb-2">LinkedIn</h3>
             <p className="text-gray-400">Connect with me</p>
           </div>
           
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 hover:border-gray-700 transition-colors">
+          <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors">
             <div className="text-3xl mb-4">🐙</div>
             <h3 className="text-lg font-semibold text-white mb-2">GitHub</h3>
             <p className="text-gray-400">Check out my code</p>

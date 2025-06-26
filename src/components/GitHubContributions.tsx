@@ -1,5 +1,5 @@
-
 import { useEffect, useState } from 'react';
+import { Github } from 'lucide-react';
 
 const GitHubContributions = () => {
   const [contributions, setContributions] = useState<number[][]>([]);
@@ -35,7 +35,7 @@ const GitHubContributions = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-900" id="github-contributions">
+    <section className="py-20 bg-black" id="github-contributions">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">GitHub Contributions</h2>
@@ -43,25 +43,34 @@ const GitHubContributions = () => {
             My coding activity and contribution patterns over the past year.
           </p>
         </div>
-        
-        <div className="bg-black/50 p-8 rounded-2xl border border-gray-800 animate-fade-in" style={{ animationDelay: '200ms' }}>
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-bold text-white">Contribution Graph</h3>
-            <div className="flex items-center space-x-2 text-sm text-gray-400">
-              <span>Less</span>
-              <div className="flex space-x-1">
-                {[0, 1, 2, 3, 4].map((level) => (
-                  <div
-                    key={level}
-                    className={`w-3 h-3 rounded-sm ${getContributionColor(level)}`}
-                  ></div>
-                ))}
+        <div className="flex flex-col gap-12">
+          <div className="flex items-center justify-between animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black/80">
+                <Github size={40} />
               </div>
-              <span>More</span>
+              <div>
+                <div className="text-2xl font-bold text-white leading-tight">Contribution Graph</div>
+                <div className="text-lg text-gray-300 leading-tight">Yearly activity overview</div>
+                <div className="flex items-center space-x-2 text-sm text-gray-400 mt-2">
+                  <span>Less</span>
+                  <div className="flex space-x-1">
+                    {[0, 1, 2, 3, 4].map((level) => (
+                      <div
+                        key={level}
+                        className={`w-3 h-3 rounded-sm ${getContributionColor(level)}`}
+                      ></div>
+                    ))}
+                  </div>
+                  <span>More</span>
+                </div>
+              </div>
+            </div>
+            <div className="text-right text-lg text-white font-normal min-w-[160px]">
+              {/* You can add a summary or leave blank */}
             </div>
           </div>
-          
-          <div className="overflow-x-auto mb-8">
+          <div className="overflow-x-auto animate-fade-in" style={{ animationDelay: '400ms' }}>
             <div className="flex space-x-1" style={{ minWidth: '800px' }}>
               {contributions.map((week, weekIndex) => (
                 <div key={weekIndex} className="flex flex-col space-y-1">
@@ -76,19 +85,21 @@ const GitHubContributions = () => {
               ))}
             </div>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="bg-gray-800/50 p-6 rounded-xl">
-              <div className="text-3xl font-bold text-white mb-2">1,247</div>
-              <div className="text-gray-400">Total Contributions</div>
+          <div className="flex items-center justify-between animate-fade-in" style={{ animationDelay: '600ms' }}>
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black/80">
+                <Github size={32} />
+              </div>
+              <div>
+                <div className="text-xl font-bold text-white leading-tight">1,247</div>
+                <div className="text-lg text-gray-300 leading-tight">Total Contributions</div>
+              </div>
             </div>
-            <div className="bg-gray-800/50 p-6 rounded-xl">
-              <div className="text-3xl font-bold text-white mb-2">156</div>
-              <div className="text-gray-400">Days Active</div>
+            <div className="text-right text-lg text-white font-normal min-w-[160px]">
+              156 days active
             </div>
-            <div className="bg-gray-800/50 p-6 rounded-xl">
-              <div className="text-3xl font-bold text-white mb-2">23</div>
-              <div className="text-gray-400">Repositories</div>
+            <div className="text-right text-lg text-white font-normal min-w-[160px]">
+              23 repositories
             </div>
           </div>
         </div>

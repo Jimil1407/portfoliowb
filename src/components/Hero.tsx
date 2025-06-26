@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
@@ -19,13 +18,12 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" id="home">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-black"></div>
       
       {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        {/* Remove blue/purple blobs for a pure black look */}
       </div>
       
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
@@ -36,12 +34,12 @@ const Hero = () => {
         
         <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-500">
           22, interested in ML, DevOps ,coding, anything which brings a change. My other interests also include cricket, football
-          & geopolitics. If you're building something, let's connect.
+          & geopolitics. 
 
         </p>
         
         <p className="text-lg text-gray-400 mb-12 animate-fade-in delay-700">
-          If you're working on something real, let's talk.
+          If you're working on something real, let's connect.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-1000">

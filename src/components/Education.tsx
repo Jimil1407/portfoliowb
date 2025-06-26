@@ -1,4 +1,3 @@
-
 const Education = () => {
   const education = [
     {
@@ -34,24 +33,22 @@ const Education = () => {
           </p>
         </div>
         
-        <div className="space-y-8">
+        <div className="flex flex-col gap-12">
           {education.map((edu, index) => (
-            <div 
-              key={edu.degree}
-              className="bg-black/50 p-8 rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
-                  <p className="text-blue-400 text-lg font-medium">{edu.school}</p>
+            <div key={edu.degree} className="flex items-center justify-between animate-fade-in" style={{ animationDelay: `${index * 200}ms` }}>
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black/80">
+                  <span className="text-4xl">🎓</span>
                 </div>
-                <div className="text-right mt-2 md:mt-0">
-                  <p className="text-gray-400 font-medium">{edu.period}</p>
-                  <p className="text-gray-500 text-sm">{edu.location}</p>
+                <div>
+                  <div className="text-2xl font-bold text-white leading-tight">{edu.degree}</div>
+                  <div className="text-lg text-gray-300 leading-tight">{edu.school}</div>
+                  <div className="text-base text-gray-400 leading-tight">{edu.description}</div>
                 </div>
               </div>
-              <p className="text-gray-300 leading-relaxed">{edu.description}</p>
+              <div className="text-right text-lg text-white font-normal min-w-[160px]">
+                {edu.period}
+              </div>
             </div>
           ))}
         </div>

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Moon, FileText, User, Home, Briefcase, Mail, Map } from 'lucide-react';
+import { Github, Linkedin, Moon, FileText, User, Home, Briefcase, Mail, Map, Code2 } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -7,11 +7,11 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { id: 'home', label: 'Home', path: '/', icon: Home },
-    { id: 'about', label: 'About', path: '/about', icon: User },
+    { id: 'home', label: 'Home', path: '/#home', icon: Home },
+    { id: 'projects', label: 'Projects', path: '/#projects', icon: Code2 },
+    { id: 'experience', label: 'Experience', path: '/#experience', icon: Briefcase },
     { id: 'journey', label: 'Journey', path: '/journey', icon: Map },
-    { id: 'projects', label: 'Projects', path: '/#projects', icon: Briefcase },
-    { id: 'contact', label: 'Contact', path: '/contact', icon: Mail },
+    { id: 'contact', label: 'Contact', path: '/#contact', icon: Mail },
   ];
 
   const handleResumeDownload = () => {
@@ -23,9 +23,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 animate-fade-in">
-      <div className="bg-black/95 backdrop-blur-xl border border-gray-800/50 rounded-2xl px-8 py-4 shadow-2xl">
-        <div className="flex items-center space-x-8">
-          <div className="flex items-center space-x-6">
+      <div className="bg-black/30 backdrop-blur-2xl border border-white/20 rounded-xl px-4 py-2 shadow-2xl">
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (

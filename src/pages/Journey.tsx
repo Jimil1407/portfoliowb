@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 
 const Journey = () => {
@@ -46,12 +45,12 @@ const Journey = () => {
               >
                 <div className="flex flex-col md:flex-row items-start gap-8">
                   <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-2xl font-bold">
+                    <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center text-2xl font-bold">
                       {step.year}
                     </div>
                   </div>
                   
-                  <div className="flex-1 bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-[1.02]">
+                  <div className="flex-1 bg-black/80 p-8 rounded-xl border border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-[1.02]">
                     <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
                     <p className="text-gray-300 mb-6 leading-relaxed">{step.description}</p>
                     
@@ -59,7 +58,7 @@ const Journey = () => {
                       {step.highlights.map((highlight, idx) => (
                         <div 
                           key={idx}
-                          className="bg-gray-800 px-4 py-2 rounded-full text-sm text-center border border-gray-700 hover:border-blue-500 transition-colors"
+                          className="bg-black/60 px-4 py-2 rounded-full text-sm text-center border border-gray-700 hover:border-white transition-colors"
                         >
                           {highlight}
                         </div>
