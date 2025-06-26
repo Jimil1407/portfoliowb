@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Moon, FileText } from 'lucide-react';
+import { Github, Linkedin, Moon, FileText, User } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -9,15 +9,15 @@ const Navbar = () => {
 
   const navItems = [
     { id: 'home', label: 'Home', path: '/' },
+    { id: 'about', label: 'About', path: '/about' },
     { id: 'journey', label: 'Journey', path: '/journey' },
     { id: 'projects', label: 'Projects', path: '/#projects' },
     { id: 'contact', label: 'Contact', path: '/#contact' },
   ];
 
   const handleResumeDownload = () => {
-    // Create a dummy PDF download - in real implementation, replace with your actual resume URL
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Replace with your actual resume path
+    link.href = '/resume.pdf';
     link.download = 'Jimil_Mansoori_Resume.pdf';
     link.click();
   };
@@ -48,6 +48,13 @@ const Navbar = () => {
           <div className="h-6 w-px bg-gray-600"></div>
           
           <div className="flex items-center space-x-4">
+            <Link
+              to="/about"
+              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gray-800 rounded-lg"
+              title="About Me"
+            >
+              <User size={18} />
+            </Link>
             <button
               onClick={handleResumeDownload}
               className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gray-800 rounded-lg"
