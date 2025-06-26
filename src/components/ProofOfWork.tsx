@@ -38,24 +38,6 @@ const ProofOfWork = () => {
       github: "https://github.com/Jimil1407",
       live: "https://example.com",
       featured: true
-    },
-    {
-      title: "EcoTrack",
-      description: "Environmental impact tracking application that helps users monitor their carbon footprint and adopt sustainable practices.",
-      tech: ["React Native", "Firebase", "Node.js", "Express", "Chart.js"],
-      icon: "🌱",
-      github: "https://github.com/Jimil1407",
-      live: "https://example.com",
-      featured: true
-    },
-    {
-      title: "TaskMaster AI",
-      description: "AI-powered task management system with intelligent prioritization, deadline prediction, and productivity analytics.",
-      tech: ["Vue.js", "Python", "FastAPI", "OpenAI", "PostgreSQL", "Redis"],
-      icon: "🤖",
-      github: "https://github.com/Jimil1407",
-      live: "https://example.com",
-      featured: true
     }
   ];
 
@@ -69,31 +51,31 @@ const ProofOfWork = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className="group bg-gradient-to-br from-gray-900/50 to-black border border-gray-800/50 rounded-2xl p-8 hover:border-gray-700/50 transition-all duration-500 hover:transform hover:scale-[1.02] animate-fade-in"
+              className="group bg-black border border-gray-800 rounded-2xl p-8 hover:border-gray-700 transition-all duration-500 hover:transform hover:scale-[1.02] animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl flex items-center justify-center text-2xl border border-gray-700/50">
+                  <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-2xl border border-gray-800">
                     {project.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-gray-300 transition-all duration-300">
                     {project.title}
                   </h3>
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+              <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
               
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.tech.map((tech) => (
                   <span 
                     key={tech}
-                    className="bg-gray-800/50 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-700/50 hover:border-gray-600 transition-colors"
+                    className="bg-gray-900 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-800"
                   >
                     {tech}
                   </span>
@@ -103,21 +85,29 @@ const ProofOfWork = () => {
               <div className="flex space-x-4">
                 <a 
                   href={project.live}
-                  className="flex-1 flex items-center justify-center space-x-2 bg-white text-black py-2.5 px-4 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:text-white font-medium group/btn"
+                  className="relative flex-1 flex items-center justify-center space-x-2 bg-black text-white py-2.5 px-4 rounded-lg font-medium group/btn overflow-hidden"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Globe size={16} />
-                  <span>Website</span>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 p-[1px]">
+                    <div className="h-full w-full bg-black rounded-lg flex items-center justify-center space-x-2">
+                      <Globe size={16} />
+                      <span>Website</span>
+                    </div>
+                  </div>
                 </a>
                 <a 
                   href={project.github}
-                  className="flex-1 flex items-center justify-center space-x-2 bg-gray-800 hover:bg-gray-700 text-white py-2.5 px-4 rounded-lg transition-all duration-300 font-medium border border-gray-700 hover:border-gray-600"
+                  className="relative flex-1 flex items-center justify-center space-x-2 bg-black text-white py-2.5 px-4 rounded-lg font-medium group/btn overflow-hidden"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github size={16} />
-                  <span>Source</span>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-gray-600 to-gray-400 p-[1px]">
+                    <div className="h-full w-full bg-black rounded-lg flex items-center justify-center space-x-2">
+                      <Github size={16} />
+                      <span>Source</span>
+                    </div>
+                  </div>
                 </a>
               </div>
             </div>
