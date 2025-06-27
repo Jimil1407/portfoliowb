@@ -61,7 +61,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-fade-in" style={{ transform: 'translateX(-50%)' }}>
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-navbar-bounce" style={{ transform: 'translateX(-50%)' }}>
       <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-full px-4 py-2 shadow-2xl">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-3">
@@ -72,7 +72,7 @@ const Navbar = () => {
                   key={item.id}
                   to={item.path}
                   onClick={(e) => handleNavClick(item, e)}
-                  className={`p-2 rounded-lg transition-all duration-300 hover:scale-110 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 ${
+                  className={`p-2 rounded-lg transition-all duration-300 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 ${
                     (location.pathname === item.path || 
                      (item.id === 'home' && location.pathname === '/') ||
                      activeSection === item.id)
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={handleResumeDownload}
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
               title="Download Resume"
             >
               <FileText size={18} />
@@ -101,7 +101,7 @@ const Navbar = () => {
               href="https://github.com/Jimil1407"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
               title="GitHub"
             >
               <Github size={18} />
@@ -110,7 +110,7 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/jimil-digaswala-b44973192/?trk=public-profile-join-page"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
               title="LinkedIn"
             >
               <Linkedin size={18} />
@@ -119,7 +119,7 @@ const Navbar = () => {
               href="https://dev.to/jimil_digaswala_eb1ee38db"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
               title="DEV Community"
             >
               <Terminal size={18} />

@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Copy, Check, X } from 'lucide-react';
+import { Mail, Linkedin, Github, Check, Terminal } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -10,7 +10,6 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'success' | 'error' | 'loading'>('idle');
-  const [copied, setCopied] = useState(false);
 
   // Refs for focusing
   const gitAddRef = useRef<HTMLInputElement>(null);
@@ -88,35 +87,6 @@ const Contact = () => {
     }
   };
 
-  const handleEmailClick = () => {
-    const email = 'jimil.devs@gmail.com';
-    
-    // Only copy to clipboard - no mailto to avoid third-party handlers
-    copyToClipboard(email);
-  };
-
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
-    } catch (err) {
-      // Fallback for older browsers
-      const textArea = document.createElement('textarea');
-      textArea.value = text;
-      textArea.style.position = 'fixed';
-      textArea.style.left = '-999999px';
-      textArea.style.top = '-999999px';
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
-    }
-  };
-
   return (
     <section className="py-20 bg-black" id="contact">
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -128,13 +98,13 @@ const Contact = () => {
         <div className="flex flex-col items-center justify-center mt-12">
           <div className="text-center mb-4">
             <h3 className="text-white text-xl font-semibold mb-2">
-              drop a message for me? lets do it the git way !!
+              drop a message for me in the git style !
             </h3>
             <p className="text-green-400 font-mono">
               git add . "your message for me" &amp;&amp; git commit -m "your mail id"
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="w-full max-w-2xl bg-[#182132] rounded-xl shadow-lg p-8 mb-4">
+          <form onSubmit={handleSubmit} className="w-full max-w-2xl bg-black rounded-xl shadow-lg p-8 mb-4 border border-gray-800">
             <div className="text-green-400 font-mono mb-4">
               <div>$ git add . "{message}"</div>
               <div>$ git commit -m "{email}"</div>
@@ -191,38 +161,23 @@ const Contact = () => {
             )}
           </form>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors cursor-pointer" onClick={handleEmailClick}>
-            <div className="mb-4 flex justify-center"><Mail size={32} /></div>
-            <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
-            <p className="text-gray-400">jimil.devs@gmail.com</p>
-            {copied && (
-              <div className="mt-2 text-sm text-green-400 flex items-center justify-center gap-1">
-                <Check size={16} />
-                Email copied to clipboard!
-              </div>
-            )}
+        {/* Footer with social links */}
+        <div className="mt-12 flex flex-col items-center">
+          <div className="flex gap-6 justify-center items-center">
+            <a href="mailto:jimil.devs@gmail.com" className="text-gray-300 hover:text-green-400 transition" title="Email">
+              <Mail size={28} />
+            </a>
+            <a href="https://github.com/Jimil1407" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition" title="GitHub">
+              <Github size={28} />
+            </a>
+            <a href="https://www.linkedin.com/in/jimil-digaswala-b44973192/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition" title="LinkedIn">
+              <Linkedin size={28} />
+            </a>
+            <a href="https://dev.to/jimil_digaswala_eb1ee38db" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition" title="DEV Community">
+              <Terminal size={28} />
+            </a>
           </div>
-          
-          <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors cursor-pointer" onClick={() => window.open('https://www.linkedin.com/in/jimil-digaswala-b44973192/', '_blank')}>
-            <div className="mb-4 flex justify-center"><Linkedin size={32} /></div>
-            <h3 className="text-lg font-semibold text-white mb-2">LinkedIn</h3>
-                  <p className="text-gray-400">Connect with me</p>
-          </div>
-          
-          <div className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-white transition-colors cursor-pointer" onClick={() => window.open('https://x.com/jimiltwt', '_blank')}  >
-            <div className="mb-4 flex justify-center"><X size={32} /></div>
-            <h3 className="text-lg font-semibold text-white mb-2">X (Twitter) </h3>
-            <p className="text-gray-400">My thoughts on tech</p>
-          </div>
-        </div>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-       
-          <button className="border border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-200 transform hover:scale-105" onClick={handleEmailClick}>
-            Send a Message
-          </button>
+          <div className="text-gray-500 text-xs mt-4">&copy; {new Date().getFullYear()} Jimil Digaswala</div>
         </div>
       </div>
     </section>
