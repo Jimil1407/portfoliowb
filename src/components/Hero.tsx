@@ -47,7 +47,7 @@ const Hero = () => {
             
             {/* Get in touch button */}
           <div className="relative inline-block rounded-2xl">
-            <div className="absolute inset-0 rounded-2xl p-[1.5px] bg-[conic-gradient(from_0deg,theme(colors.blue.400),theme(colors.pink.400),theme(colors.purple.400),theme(colors.blue.400))] animate-spin-slow"></div>
+            <div className="absolute inset-0 rounded-2xl p-[1.5px]"></div>
             <button className="relative z-10 bg-white text-black px-8 py-3 rounded-2xl font-medium shadow-xl"
               onClick={() => {
                 const contactSection = document.getElementById('contact');
