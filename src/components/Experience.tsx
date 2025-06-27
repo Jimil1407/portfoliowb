@@ -1,16 +1,16 @@
 const Experience = () => {
   const experiences = [
     {
-      logo: "✈️",
-      title: "Freelance",
-      description: "building full stack apps",
-      period: "2024 - present"
+      logo: "https://www.ey.com/content/dam/ey-unified-site/ey-com/en-in/generic/images/ey-logo-black.png",
+      title: "SDE - Ernst & Young",
+      description: "Building full stack apps",
+      period: "October 2025 - present"
     },
     {
-      logo: "\u25B2",
-      title: "Full Stack Development - TA",
-      description: "Stealth Startup",
-      period: "Feb 2024 - June 2024"
+      logo: "https://media.licdn.com/dms/image/v2/D560BAQErz1LG1tXsew/company-logo_200_200/company-logo_200_200/0/1666092569253/matalia_stock_broking_pvtltd_logo?e=1756339200&v=beta&t=0W4HRCmzRcQLPdOG-_d3camrH3VUD_rmkpgg5A_qY1E",
+      title: "Quant Developer - Matalia FinTech",
+      description: "Built high performance trading algorithms",
+      period: "September 2023 - November 2023"
     }
   ];
 
@@ -29,7 +29,15 @@ const Experience = () => {
             <div key={exp.title} className="flex items-center justify-between animate-fade-in" style={{ animationDelay: `${index * 200}ms` }}>
               <div className="flex items-center gap-6">
                 <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white/5">
-                  <span className="text-4xl">{exp.logo}</span>
+                  {exp.logo.startsWith('http') ? (
+                    <img 
+                      src={exp.logo} 
+                      alt={`${exp.title} logo`}
+                      className="w-10 h-10 object-contain"
+                    />
+                  ) : (
+                    <span className="text-4xl">{exp.logo}</span>
+                  )}
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-white leading-tight">{exp.title}</div>

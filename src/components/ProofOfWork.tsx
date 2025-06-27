@@ -3,39 +3,39 @@ import { Globe, Github } from 'lucide-react';
 const ProofOfWork = () => {
   const projects = [
     {
-      title: "OrbitToken",
-      description: "A decentralized platform enables users launch their custom tokens, transfer tokens, view token balances, transfer SOL, and check account balances.",
-      tech: ["React", "Web3.js", "TypeScript", "Recoil", "spl-token", "Tailwind CSS"],
+      title: "PDF Research Bot",
+      description: "PDF Research Bot is a web application built using Streamlit and OpenAI's GPT-3.5 language model, designed to assist users in researching PDF documents by generating questions and finding answers.",
+      tech: ["python", "nlp", "data" ,"machine-learning", "tokenizer" ,"nltk", "langchain"],
       icon: "🚀",
-      github: "https://github.com/Jimil1407",
-      live: "https://example.com",
+      github: "https://github.com/Jimil1407/research_bot",
+      live: "https://researchbot-jimil.streamlit.app/",
       featured: true
     },
     {
-      title: "GhostGram - SaaS platform",
-      description: "GhostGram is an anonymous messaging platform that lets users securely send and receive messages through unique, authenticated links.",
-      tech: ["Next.js", "TypeScript", "Gemini", "MongoDB", "NextAuth", "Nodemailer", "Tailwind CSS", "Shadcn"],
+      title: "PromptMotion - Cursor for 2D Animations.",
+      description: "Create stunning videos from prompts, edit code, and build your animation history — all in one place.",
+      tech: ["Next.js", "TypeScript", "Gemini", "MongoDB", "animations", "cursor", "Tailwind CSS", "Firebase"],
       icon: "👻",
-      github: "https://github.com/Jimil1407",
-      live: "https://example.com",
+      github: "https://github.com/Jimil1407/cursor-2d-animation",
+      live: "https://promptmotion.vercel.app/login",
       featured: true
     },
     {
-      title: "CryptoTracker Pro",
-      description: "Real-time cryptocurrency tracking platform with portfolio management, price alerts, and advanced analytics for traders and investors.",
-      tech: ["React", "Node.js", "MongoDB", "WebSocket", "Chart.js", "Express"],
+      title: "AR Logistics Pro",
+      description: "This project is a unique combination of Augmented Reality (AR) and Machine Learning (ML) for detecting and classifying various types of footwear in real-time using a live camera feed.",
+      tech: ["React", "Node.js", "MongoDB", "AR", "Python", "Express"],
       icon: "₿",
-      github: "https://github.com/Jimil1407",
-      live: "https://example.com",
+      github: "https://github.com/Jimil1407/AR_Logistics_pro",
+      live: "https://github.com/Jimil1407/AR_Logistics_pro",
       featured: true
     },
     {
-      title: "DevFlow",
-      description: "A comprehensive developer workflow platform with project management, code collaboration, and deployment automation features.",
-      tech: ["Next.js", "PostgreSQL", "Prisma", "Docker", "AWS", "TypeScript"],
+      title: "Bitcoin Price Predictor",
+      description: "A Bitcoin price predictor using FB Prophet to forecast Bitcoin prices for the next year based on historical data.",
+      tech: ["Pandas", "python", "FB-Prophet", "Docker", "Numpy"],
       icon: "⚡",
-      github: "https://github.com/Jimil1407",
-      live: "https://example.com",
+      github: "https://github.com/Jimil1407/bitcoin_price_predictor",
+      live: "https://github.com/Jimil1407/bitcoin_price_predictor",
       featured: true
     }
   ];

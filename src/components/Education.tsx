@@ -1,25 +1,11 @@
 const Education = () => {
   const education = [
     {
-      degree: "Bachelor's in Computer Science",
-      school: "University Name",
+      degree: "B.Tech in Computer Science (Spl in AI & ML)",
+      school: "Vellore Institute of Technology",
       period: "2021 - 2025",
-      description: "Focused on software engineering and web technologies",
-      location: "City, State"
-    },
-    {
-      degree: "Full Stack Web Development",
-      school: "Online Certification",
-      period: "2022",
-      description: "Comprehensive course covering modern web development stack",
-      location: "Online"
-    },
-    {
-      degree: "JavaScript Algorithms and Data Structures",
-      school: "freeCodeCamp",
-      period: "2022",
-      description: "Certification in JavaScript fundamentals and problem-solving",
-      location: "Online"
+      description: "Focused on software engineering and AI/ML",
+      location: "Tamil Nadu, India"
     }
   ];
 
