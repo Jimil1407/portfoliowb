@@ -113,13 +113,7 @@ const Navbar = () => {
             >
               <Linkedin size={18} />
             </a>
-            <button
-              onClick={toggleTheme}
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
-              title="Toggle theme"
-            >
-              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
+            
           </div>
         </div>
       </div>
