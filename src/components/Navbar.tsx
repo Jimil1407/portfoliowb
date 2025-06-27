@@ -72,12 +72,12 @@ const Navbar = () => {
                   key={item.id}
                   to={item.path}
                   onClick={(e) => handleNavClick(item, e)}
-                  className={`p-2 rounded-lg transition-all duration-300 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 ${
+                  className={`p-2 rounded-lg transition-colors duration-200 hover:text-white hover:bg-gray-800 ${
                     (location.pathname === item.path || 
                      (item.id === 'home' && location.pathname === '/') ||
                      activeSection === item.id)
-                      ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20' 
-                      : 'text-gray-400 hover:text-white'
+                      ? 'text-white bg-gray-800' 
+                      : 'text-gray-400'
                   }`}
                   title={item.label}
                 >
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={handleResumeDownload}
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
               title="Download Resume"
             >
               <FileText size={18} />
@@ -101,7 +101,7 @@ const Navbar = () => {
               href="https://github.com/Jimil1407"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
               title="GitHub"
             >
               <Github size={18} />
@@ -110,7 +110,7 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/jimil-digaswala-b44973192/?trk=public-profile-join-page"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
               title="LinkedIn"
             >
               <Linkedin size={18} />
@@ -119,7 +119,7 @@ const Navbar = () => {
               href="https://dev.to/jimil_digaswala_eb1ee38db"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-125 active:scale-95 hover:shadow-lg hover:shadow-blue-500/30 hover:animate-icon-wiggle p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
               title="DEV Community"
             >
               <Terminal size={18} />
