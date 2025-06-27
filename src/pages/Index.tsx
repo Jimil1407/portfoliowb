@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProofOfWork from '@/components/ProofOfWork';
@@ -12,6 +13,11 @@ import { useHashScroll } from '@/hooks/use-hash-scroll';
 const Index = () => {
   // Handle hash-based navigation
   useHashScroll();
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white">

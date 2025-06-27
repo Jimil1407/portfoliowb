@@ -10,11 +10,16 @@ export const useHashScroll = () => {
     // Handle hash navigation when component mounts or location changes
     if (location.hash) {
       const sectionId = location.hash.substring(1); // Remove the # symbol
-      
-      // Use requestAnimationFrame for better performance
-      requestAnimationFrame(() => {
-        scrollToSection(sectionId);
-      });
+      const el = document.getElementById(sectionId);
+      if (el) {
+        // Use requestAnimationFrame for better performance
+        requestAnimationFrame(() => {
+          scrollToSection(sectionId);
+        });
+      } else {
+        // If the section doesn't exist, clear the hash from the URL
+        history.replaceState(null, '', window.location.pathname);
+      }
     }
   }, [location.hash, scrollToSection]);
 
@@ -23,9 +28,14 @@ export const useHashScroll = () => {
     const handlePopState = () => {
       if (location.hash) {
         const sectionId = location.hash.substring(1);
-        requestAnimationFrame(() => {
-          scrollToSection(sectionId);
-        });
+        const el = document.getElementById(sectionId);
+        if (el) {
+          requestAnimationFrame(() => {
+            scrollToSection(sectionId);
+          });
+        } else {
+          history.replaceState(null, '', window.location.pathname);
+        }
       }
     };
 
