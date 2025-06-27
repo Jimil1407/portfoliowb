@@ -1,4 +1,4 @@
-import { Github, Linkedin, Moon, Sun, FileText, User, Home, Briefcase, Mail, Map, Code2 } from 'lucide-react';
+import { Github, Linkedin, Moon, Sun, FileText, User, Home, Briefcase, Mail, Map, Code2, Terminal } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
@@ -55,7 +55,7 @@ const Navbar = () => {
 
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = 'https://drive.google.com/file/d/1-QHrHU0AR9iNTTbn24b2SR98gTrCCSWw/view';
     link.download = 'Jimil_Resume.pdf';
     link.click();
   };
@@ -102,6 +102,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              title="GitHub"
             >
               <Github size={18} />
             </a>
@@ -110,10 +111,19 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              title="LinkedIn"
             >
               <Linkedin size={18} />
             </a>
-            
+            <a
+              href="https://dev.to/jimil_digaswala_eb1ee38db"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-400 transition-all duration-200 hover:scale-110 p-2 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 rounded-lg"
+              title="DEV Community"
+            >
+              <Terminal size={18} />
+            </a>
           </div>
         </div>
       </div>

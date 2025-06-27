@@ -43,18 +43,22 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-1000">
-         
-          <button 
-            className="border border-gray-600 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-all duration-200 transform hover:scale-105"
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            Get in touch
-          </button>
+            {/* Book a meet button */}
+            
+            {/* Get in touch button */}
+          <div className="relative inline-block rounded-2xl">
+            <div className="absolute inset-0 rounded-2xl p-[1.5px] bg-[conic-gradient(from_0deg,theme(colors.blue.400),theme(colors.pink.400),theme(colors.purple.400),theme(colors.blue.400))] animate-spin-slow"></div>
+            <button className="relative z-10 bg-white text-black px-8 py-3 rounded-2xl font-medium shadow-xl"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Get in touch
+            </button>
+          </div>
         </div>
       </div>
       
