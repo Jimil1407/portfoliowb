@@ -61,10 +61,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 animate-navbar-bounce" style={{ transform: 'translateX(-50%)' }}>
-      <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-full px-4 py-2 shadow-2xl">
-        <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-3">
+    <nav className="fixed top-3 md:top-6 left-1/2 -translate-x-1/2 z-50 animate-navbar-bounce w-full max-w-4xl" style={{ transform: 'translateX(-50%)' }}>
+      <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-full px-1.5 md:px-4 py-1 md:py-2 shadow-2xl flex items-center justify-between">
+        <div className="flex items-center space-x-1.5 md:space-x-4 w-full justify-between">
+          <div className="flex items-center space-x-1.5 md:space-x-3">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
@@ -72,7 +72,7 @@ const Navbar = () => {
                   key={item.id}
                   to={item.path}
                   onClick={(e) => handleNavClick(item, e)}
-                  className={`p-2 rounded-lg transition-colors duration-200 hover:text-white hover:bg-gray-800 ${
+                  className={`p-1.5 md:p-2 rounded-lg transition-colors duration-200 hover:text-white hover:bg-gray-800 ${
                     (location.pathname === item.path || 
                      (item.id === 'home' && location.pathname === '/') ||
                      activeSection === item.id)
@@ -81,48 +81,46 @@ const Navbar = () => {
                   }`}
                   title={item.label}
                 >
-                  <Icon size={18} />
+                  <Icon size={15} className="md:size-[18px]" />
                 </Link>
               );
             })}
           </div>
-          
           <div className="h-6 w-px bg-gray-600"></div>
-          
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1.5 md:space-x-4">
             <button
               onClick={handleResumeDownload}
-              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="Download Resume"
             >
-              <FileText size={18} />
+              <FileText size={15} className="md:size-[18px]" />
             </button>
             <a
               href="https://github.com/Jimil1407"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="GitHub"
             >
-              <Github size={18} />
+              <Github size={15} className="md:size-[18px]" />
             </a>
             <a
               href="https://www.linkedin.com/in/jimil-digaswala-b44973192/?trk=public-profile-join-page"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="LinkedIn"
             >
-              <Linkedin size={18} />
+              <Linkedin size={15} className="md:size-[18px]" />
             </a>
             <a
               href="https://dev.to/jimil_digaswala_eb1ee38db"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white transition-colors duration-200 hover:text-blue-400 p-2 rounded-lg hover:bg-gray-800"
+              className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="DEV Community"
             >
-              <Terminal size={18} />
+              <Terminal size={15} className="md:size-[18px]" />
             </a>
           </div>
         </div>
