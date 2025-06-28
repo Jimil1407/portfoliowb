@@ -62,9 +62,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-3 md:top-6 left-1/2 -translate-x-1/2 z-50 animate-navbar-bounce w-full max-w-4xl" style={{ transform: 'translateX(-50%)' }}>
-      <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-full px-1.5 md:px-4 py-1 md:py-2 shadow-2xl flex items-center justify-between">
+      <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-xl md:rounded-full px-1 py-0.5 md:px-4 md:py-2 shadow-2xl flex items-center justify-between">
         <div className="flex items-center space-x-1.5 md:space-x-4 w-full justify-between">
-          <div className="flex items-center space-x-1.5 md:space-x-3">
+          <div className="flex items-center space-x-1 md:space-x-3">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
@@ -81,19 +81,19 @@ const Navbar = () => {
                   }`}
                   title={item.label}
                 >
-                  <Icon size={15} className="md:size-[18px]" />
+                  <Icon size={13} className="md:size-[18px]" />
                 </Link>
               );
             })}
           </div>
           <div className="h-6 w-px bg-gray-600"></div>
-          <div className="flex items-center space-x-1.5 md:space-x-4">
+          <div className="flex items-center space-x-1 md:space-x-4">
             <button
               onClick={handleResumeDownload}
               className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="Download Resume"
             >
-              <FileText size={15} className="md:size-[18px]" />
+              <FileText size={13} className="md:size-[18px]" />
             </button>
             <a
               href="https://github.com/Jimil1407"
@@ -102,7 +102,7 @@ const Navbar = () => {
               className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="GitHub"
             >
-              <Github size={15} className="md:size-[18px]" />
+              <Github size={13} className="md:size-[18px]" />
             </a>
             <a
               href="https://www.linkedin.com/in/jimil-digaswala-b44973192/?trk=public-profile-join-page"
@@ -111,7 +111,7 @@ const Navbar = () => {
               className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="LinkedIn"
             >
-              <Linkedin size={15} className="md:size-[18px]" />
+              <Linkedin size={13} className="md:size-[18px]" />
             </a>
             <a
               href="https://dev.to/jimil_digaswala_eb1ee38db"
@@ -120,7 +120,7 @@ const Navbar = () => {
               className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
               title="DEV Community"
             >
-              <Terminal size={15} className="md:size-[18px]" />
+              <Terminal size={13} className="md:size-[18px]" />
             </a>
           </div>
         </div>

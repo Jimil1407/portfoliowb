@@ -21,18 +21,22 @@ const Education = () => {
         
         <div className="flex flex-col gap-12">
           {education.map((edu, index) => (
-            <div key={edu.degree} className="flex items-center justify-between animate-fade-in" style={{ animationDelay: `${index * 200}ms` }}>
-              <div className="flex items-center gap-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black/80">
+            <div
+              key={edu.degree}
+              className="flex flex-col items-center md:flex-row md:items-center md:justify-between animate-fade-in gap-4 md:gap-0"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              <div className="flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-6 w-full">
+                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-black/80 mx-auto md:mx-0">
                   <span className="text-4xl">🎓</span>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-white leading-tight">{edu.degree}</div>
-                  <div className="text-lg text-gray-300 leading-tight">{edu.school}</div>
-                  <div className="text-base text-gray-400 leading-tight">{edu.description}</div>
+                  <div className="text-2xl font-bold text-white leading-tight text-center md:text-left">{edu.degree}</div>
+                  <div className="text-lg text-gray-300 leading-tight text-center md:text-left">{edu.school}</div>
+                  <div className="text-base text-gray-400 leading-tight text-center md:text-left">{edu.description}</div>
                 </div>
               </div>
-              <div className="text-right text-lg text-white font-normal min-w-[160px]">
+              <div className="text-lg text-white font-normal min-w-[160px] text-center md:text-right mt-2 md:mt-0 w-full">
                 {edu.period}
               </div>
             </div>
