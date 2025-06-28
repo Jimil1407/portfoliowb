@@ -6,7 +6,7 @@ import { SiTypescript, SiJavascript, SiMongodb, SiMysql, SiRedux, SiExpress, SiN
 
 function getSizes(width: number) {
   if (width < 640) {
-    return { radius: 110, iconSize: '1.5rem', box: 220 };
+    return { radius: 140, iconSize: '1.8rem', box: 280 };
   } else if (width < 1024) {
     return { radius: 175, iconSize: '2.2rem', box: 350 };
   } else {

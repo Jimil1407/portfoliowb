@@ -70,7 +70,7 @@ const Hero = () => {
           <div className="relative inline-block rounded-2xl">
             <div className="absolute inset-0 rounded-2xl p-[1.5px]"></div>
             <motion.button
-              className="relative z-10 bg-white text-black px-8 py-3 rounded-2xl font-medium shadow-xl transition-all duration-300"
+              className="relative z-10 bg-white text-black px-8 py-3 rounded-2xl font-medium shadow-xl transition-all duration-300 hidden sm:inline-block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => {
@@ -92,7 +92,7 @@ const Hero = () => {
       
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </motion.section>
