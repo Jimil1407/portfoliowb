@@ -28,10 +28,10 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={exp.title}
-              className="flex flex-col md:flex-row md:items-center md:justify-between animate-fade-in gap-4 md:gap-0"
+              className="flex flex-col items-center md:flex-row md:items-center md:justify-between animate-fade-in gap-4 md:gap-0"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-6 w-full">
                 <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white/5 mx-auto md:mx-0">
                   {exp.logo.startsWith('http') ? (
                     <img 
@@ -48,7 +48,7 @@ const Experience = () => {
                   <div className="text-lg text-gray-300 leading-tight text-center md:text-left">{exp.description}</div>
                 </div>
               </div>
-              <div className="text-lg text-white font-normal min-w-[160px] text-center md:text-right mt-2 md:mt-0">
+              <div className="text-lg text-white font-normal min-w-[160px] text-center md:text-right mt-2 md:mt-0 w-full">
                 {exp.period}
               </div>
             </div>
