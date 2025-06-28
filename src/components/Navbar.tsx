@@ -1,4 +1,4 @@
-import { Github, Linkedin, Moon, Sun, FileText, User, Home, Briefcase, Mail, Map, Code2, Terminal } from 'lucide-react';
+import { Github, Linkedin, Moon, Sun, FileText, User, Home, Briefcase, Mail, Map, Code2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
@@ -114,13 +114,21 @@ const Navbar = () => {
               <Linkedin size={20} className="md:size-[24px]" />
             </a>
             <a
-              href="https://dev.to/jimil_digaswala_eb1ee38db"
+              href="https://x.com/jimiltwt"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white transition-colors duration-200 hover:text-blue-400 p-1.5 md:p-2 rounded-lg hover:bg-gray-800"
-              title="DEV Community"
+              title="X (Twitter)"
             >
-              <Terminal size={20} className="md:size-[24px]" />
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="currentColor" 
+                className="md:w-6 md:h-6"
+              >
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
             </a>
           </div>
         </div>
