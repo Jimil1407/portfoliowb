@@ -26,9 +26,13 @@ const Experience = () => {
         
         <div className="flex flex-col gap-12">
           {experiences.map((exp, index) => (
-            <div key={exp.title} className="flex items-center justify-between animate-fade-in" style={{ animationDelay: `${index * 200}ms` }}>
+            <div
+              key={exp.title}
+              className="flex flex-col md:flex-row md:items-center md:justify-between animate-fade-in gap-4 md:gap-0"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
               <div className="flex items-center gap-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white/5">
+                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white/5 mx-auto md:mx-0">
                   {exp.logo.startsWith('http') ? (
                     <img 
                       src={exp.logo} 
@@ -40,11 +44,11 @@ const Experience = () => {
                   )}
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-white leading-tight">{exp.title}</div>
-                  <div className="text-lg text-gray-300 leading-tight">{exp.description}</div>
+                  <div className="text-2xl font-bold text-white leading-tight text-center md:text-left">{exp.title}</div>
+                  <div className="text-lg text-gray-300 leading-tight text-center md:text-left">{exp.description}</div>
                 </div>
               </div>
-              <div className="text-right text-lg text-white font-normal min-w-[160px]">
+              <div className="text-lg text-white font-normal min-w-[160px] text-center md:text-right mt-2 md:mt-0">
                 {exp.period}
               </div>
             </div>
