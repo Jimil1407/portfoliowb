@@ -1,11 +1,37 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
 
 const Journey = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Trigger fade-in animation
+    setTimeout(() => setIsVisible(true), 100);
+  }, []);
+
+  // Handle smooth exit animation
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      setIsVisible(false);
+    };
+
+    // Listen for navigation events
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    
+    // Also handle when user navigates away via browser back/forward
+    const handlePopState = () => {
+      setIsVisible(false);
+    };
+    
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener('popstate', handlePopState);
+    };
   }, []);
 
   const journeySteps = [
@@ -30,7 +56,11 @@ const Journey = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div 
+      className={`min-h-screen bg-black text-white transition-opacity duration-500 ease-in-out ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
       <Navbar />
       <div className="pt-24 pb-20">
         <div className="max-w-5xl mx-auto px-6">
