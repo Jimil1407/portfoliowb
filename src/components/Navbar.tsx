@@ -61,8 +61,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-3 md:top-6 left-1/2 -translate-x-1/2 z-50 animate-navbar-bounce w-full max-w-4xl" style={{ transform: 'translateX(-50%)' }}>
-      <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-xl md:rounded-full px-1 py-0.5 md:px-4 md:py-2 shadow-2xl flex items-center justify-between">
+    <nav className="fixed top-3 md:top-6 left-1/2 -translate-x-1/2 z-50 animate-navbar-bounce w-full max-w-2xl" style={{ transform: 'translateX(-50%)' }}>
+      <div className="bg-black/60 backdrop-blur-2xl border border-white/20 rounded-xl md:rounded-full px-2 py-2 md:px-6 md:py-4 shadow-2xl flex items-center justify-between">
         <div className="flex items-center space-x-1.5 md:space-x-4 w-full justify-between">
           <div className="flex items-center space-x-1 md:space-x-3">
             {navItems.map((item) => {

@@ -89,7 +89,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="flex-1 flex justify-center items-center w-full md:w-auto mt-8 md:mt-0 h-full">
+      <div className="flex-1 flex justify-center items-center w-full md:w-auto mt-4 md:mt-0 h-full">
         <TechSphere />
       </div>
       
