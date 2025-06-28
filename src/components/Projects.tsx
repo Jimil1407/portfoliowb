@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const Projects = () => {
   const projects = [
     {
@@ -72,10 +74,12 @@ const Projects = () => {
         {/* Featured Projects */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {featuredProjects.map((project, index) => (
-            <div 
+            <motion.div
               key={project.title}
               className="group relative bg-black rounded-2xl overflow-hidden p-[2px] animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
+              whileHover={{ scale: 1.03, boxShadow: '0 8px 32px 0 rgba(80,80,120,0.15)' }}
+              whileTap={{ scale: 0.97 }}
             >
               {/* Gradient Border */}
               <div className="absolute inset-0 rounded-2xl pointer-events-none z-0 bg-gradient-to-r from-black via-black to-black"></div>
@@ -99,33 +103,37 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex space-x-4 mt-auto">
-                  <a 
+                  <motion.a
                     href={project.live}
-                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 text-sm font-semibold border-2 border-transparent bg-clip-padding relative group shadow-sm hover:shadow-md"
+                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-lg transition-all duration-200 text-sm font-semibold border-2 border-transparent bg-clip-padding relative group shadow-sm hover:shadow-md"
                     style={{ borderImage: 'linear-gradient(90deg, #22d3ee, #6366f1, #a21caf) 1' }}
                     target="_blank"
                     rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
                     Website
-                  </a>
-                  <a 
+                  </motion.a>
+                  <motion.a
                     href={project.github}
-                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105 text-sm font-semibold border-2 border-transparent bg-clip-padding relative group shadow-sm hover:shadow-md"
+                    className="flex-1 flex items-center justify-center gap-2 text-center bg-white text-black py-2 px-4 rounded-lg transition-all duration-200 text-sm font-semibold border-2 border-transparent bg-clip-padding relative group shadow-sm hover:shadow-md"
                     style={{ borderImage: 'linear-gradient(90deg, #22d3ee, #6366f1, #a21caf) 1' }}
                     target="_blank"
                     rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h9.75A2.25 2.25 0 0019.5 18.75V11.25A2.25 2.25 0 0017.25 9H15.75z" />
                     </svg>
                     Source
-                  </a>
+                  </motion.a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -135,10 +143,12 @@ const Projects = () => {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {otherProjects.map((project, index) => (
-            <div 
+            <motion.div
               key={project.title}
-              className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-[1.02] animate-fade-in"
+              className="bg-black/80 p-6 rounded-xl border border-gray-700 hover:border-gray-600 transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${600 + index * 100}ms` }}
+              whileHover={{ scale: 1.03, boxShadow: '0 8px 32px 0 rgba(80,80,120,0.15)' }}
+              whileTap={{ scale: 0.97 }}
             >
               <div className="flex items-center mb-4">
                 <span className="text-2xl mr-3">{project.image}</span>
@@ -156,24 +166,28 @@ const Projects = () => {
                 ))}
               </div>
               <div className="flex space-x-3">
-                <a 
+                <motion.a
                   href={project.github}
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Code →
-                </a>
-                <a 
+                </motion.a>
+                <motion.a
                   href={project.live}
                   className="text-blue-400 hover:text-blue-300 transition-colors text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Demo →
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

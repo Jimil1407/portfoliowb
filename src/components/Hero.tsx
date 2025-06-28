@@ -1,9 +1,25 @@
 import { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Hero = () => {
   const [text, setText] = useState('');
   const fullText = "Hi, I'm Jimil";
   
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
+
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -18,7 +34,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" id="home">
+    <motion.section
+      ref={ref}
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      initial="hidden"
+      animate={controls}
+      variants={sectionVariants}
+    >
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-black"></div>
       
       {/* Animated background elements */}
@@ -48,7 +71,10 @@ const Hero = () => {
             {/* Get in touch button */}
           <div className="relative inline-block rounded-2xl">
             <div className="absolute inset-0 rounded-2xl p-[1.5px]"></div>
-            <button className="relative z-10 bg-white text-black px-8 py-3 rounded-2xl font-medium shadow-xl"
+            <motion.button
+              className="relative z-10 bg-white text-black px-8 py-3 rounded-2xl font-medium shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
               onClick={() => {
                 const contactSection = document.getElementById('contact');
                 if (contactSection) {
@@ -57,7 +83,7 @@ const Hero = () => {
               }}
             >
               Get in touch
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -67,7 +93,7 @@ const Hero = () => {
           <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,6 +1,8 @@
 import { Mail, Linkedin, Github, Check, Terminal } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Contact = () => {
   const [step, setStep] = useState(1);
@@ -15,6 +17,18 @@ const Contact = () => {
   const gitAddRef = useRef<HTMLInputElement>(null);
   const gitCommitRef = useRef<HTMLInputElement>(null);
   const gitPushRef = useRef<HTMLInputElement>(null);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
 
   useEffect(() => {
     if (step === 1 && gitAddRef.current) gitAddRef.current.focus();
@@ -88,7 +102,14 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-black" id="contact">
+    <motion.section
+      ref={ref}
+      id="contact"
+      className="py-20 bg-black"
+      initial="hidden"
+      animate={controls}
+      variants={sectionVariants}
+    >
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something Together</h2>
         <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
@@ -100,9 +121,6 @@ const Contact = () => {
             <h3 className="text-white text-xl font-semibold mb-2">
               drop a message for me in the git style !
             </h3>
-            <p className="text-green-400 font-mono">
-              git add . "your message for me" &amp;&amp; git commit -m "your mail id"
-            </p>
           </div>
           <form onSubmit={handleSubmit} className="w-full max-w-2xl bg-black rounded-xl shadow-lg p-8 mb-4 border border-gray-800">
             <div className="text-green-400 font-mono mb-4">
@@ -174,22 +192,30 @@ const Contact = () => {
         <div className="mt-12 flex flex-col items-center">
           <div className="flex gap-6 justify-center items-center">
             <a href="mailto:jimil.devs@gmail.com" className="text-gray-300 hover:text-green-400 transition" title="Email">
-              <Mail size={28} />
+              <motion.span whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.93 }} style={{ display: 'inline-block' }}>
+                <Mail size={28} />
+              </motion.span>
             </a>
             <a href="https://github.com/Jimil1407" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition" title="GitHub">
-              <Github size={28} />
+              <motion.span whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.93 }} style={{ display: 'inline-block' }}>
+                <Github size={28} />
+              </motion.span>
             </a>
             <a href="https://www.linkedin.com/in/jimil-digaswala-b44973192/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition" title="LinkedIn">
-              <Linkedin size={28} />
+              <motion.span whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.93 }} style={{ display: 'inline-block' }}>
+                <Linkedin size={28} />
+              </motion.span>
             </a>
             <a href="https://dev.to/jimil_digaswala_eb1ee38db" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-400 transition" title="DEV Community">
-              <Terminal size={28} />
+              <motion.span whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.93 }} style={{ display: 'inline-block' }}>
+                <Terminal size={28} />
+              </motion.span>
             </a>
           </div>
           <div className="text-gray-500 text-xs mt-4">&copy; {new Date().getFullYear()} Jimil Digaswala</div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

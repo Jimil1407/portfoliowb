@@ -1,5 +1,8 @@
 import React from 'react';
 import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, SiPython, SiMongodb, SiPostgresql, SiAmazon, SiDocker, SiGit, SiFirebase } from 'react-icons/si';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 const skills = [
   { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
@@ -17,8 +20,26 @@ const skills = [
 ];
 
 const Skills = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
   return (
-    <section className="py-20 bg-black" id="skills">
+    <motion.section
+      ref={ref}
+      id="skills"
+      className="py-20 bg-black"
+      initial="hidden"
+      animate={controls}
+      variants={sectionVariants}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Skills & Expertise</h2>
@@ -31,21 +52,23 @@ const Skills = () => {
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             return (
-              <div 
+              <motion.div
                 key={skill.name}
-                className="bg-gray-900/50 p-3 rounded-xl border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105 text-center group animate-fade-in"
+                className="bg-gray-900/50 p-3 rounded-xl border border-gray-800 hover:border-blue-500 transition-all duration-300 text-center group animate-fade-in"
                 style={{ animationDelay: `${300 + index * 100}ms` }}
+                whileHover={{ scale: 1.08, boxShadow: '0 8px 32px 0 rgba(80,80,120,0.10)' }}
+                whileTap={{ scale: 0.95 }}
               >
                 <div className="mb-2 group-hover:scale-110 transition-transform duration-300 flex justify-center">
                   <Icon size={28} color={skill.color} />
                 </div>
                 <span className="text-gray-300 text-xs font-medium">{skill.name}</span>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

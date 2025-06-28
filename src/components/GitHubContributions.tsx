@@ -1,10 +1,14 @@
 import { Github } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 // @ts-ignore
 const GITHUB_TOKEN = import.meta.env.VITE_TOKEN || import.meta.env.TOKEN || import.meta.env.REACT_APP_TOKEN;
 
 const GitHubContributions = () => {
   const [contributionCount, setContributionCount] = useState<number | null>(null);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   useEffect(() => {
     async function fetchContributions() {
@@ -37,8 +41,26 @@ const GitHubContributions = () => {
     fetchContributions();
   }, []);
 
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
+
   return (
-    <section className="py-20 bg-black" id="github-contributions">
+    <motion.section
+      ref={ref}
+      id="github"
+      className="py-20 bg-black"
+      initial="hidden"
+      animate={controls}
+      variants={sectionVariants}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           
@@ -60,7 +82,7 @@ const GitHubContributions = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

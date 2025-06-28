@@ -9,6 +9,7 @@ import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import ScrollToTop from '@/components/ScrollToTop';
 import { useHashScroll } from '@/hooks/use-hash-scroll';
+import About from '@/components/About';
 
 const Index = () => {
   // Handle hash-based navigation
@@ -24,6 +25,9 @@ const Index = () => {
       <Navbar />
       <section id="home">
         <Hero />
+      </section>
+      <section id="about">
+        <About />
       </section>
       <section id="projects">
         <ProofOfWork />

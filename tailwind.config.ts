@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -158,7 +157,10 @@ export default {
 				'scale-in': 'scale-in 0.5s ease-out',
 				'bounce-in': 'bounce-in 0.8s ease-out',
 				'float': 'float 3s ease-in-out infinite'
-			}
+			},
+			fontFamily: {
+				sans: ["Sora", "system-ui", "sans-serif"],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
