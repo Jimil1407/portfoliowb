@@ -54,7 +54,7 @@ const ProofOfWork = () => {
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className="group relative bg-black rounded-2xl overflow-hidden p-[2px] w-full aspect-square animate-card-fade-in-up"
+              className="group relative bg-black rounded-2xl overflow-hidden p-[2px] w-full h-auto sm:aspect-square animate-card-fade-in-up"
               style={{ animationDelay: `${index * 120}ms` }}
             >
               {/* Animated Gradient Border */}
@@ -72,7 +72,7 @@ const ProofOfWork = () => {
                   </div>
                 </div>
                 <p className="text-gray-300 mb-4 leading-relaxed text-left text-sm sm:text-base">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6 text-left">
+                <div className="flex flex-wrap gap-2 mb-6 text-left w-full">
                   {project.tech.map((tech) => (
                     <span 
                       key={tech}
