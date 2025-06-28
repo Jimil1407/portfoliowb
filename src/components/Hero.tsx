@@ -51,18 +51,18 @@ const Hero = () => {
       </div>
       
       <div className="relative z-10 flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left px-6 h-full self-center mx-auto md:pl-12">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+        <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6 animate-fade-in">
           {text}
           <span className="animate-pulse">|</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-500">
+        <p className="text-base sm:text-lg md:text-2xl text-gray-300 mb-3 md:mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-500">
           22, interested in ML, DevOps ,coding, anything which brings a change. My other interests also include cricket, football
           & geopolitics. 
 
         </p>
         
-        <p className="text-lg text-gray-400 mb-12 animate-fade-in delay-700">
+        <p className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 md:mb-12 animate-fade-in delay-700">
           If you're working on something real, let's connect.
         </p>
         
