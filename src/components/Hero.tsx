@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import TechSphere from './TechSphere';
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -37,7 +38,7 @@ const Hero = () => {
     <motion.section
       ref={ref}
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center relative overflow-hidden"
       initial="hidden"
       animate={controls}
       variants={sectionVariants}
@@ -49,7 +50,7 @@ const Hero = () => {
         {/* Remove blue/purple blobs for a pure black look */}
       </div>
       
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left px-6 h-full self-center mx-auto md:pl-12">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
           {text}
           <span className="animate-pulse">|</span>
@@ -65,7 +66,7 @@ const Hero = () => {
           If you're working on something real, let's connect.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-1000">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in delay-1000">
             {/* Book a meet button */}
             
             {/* Get in touch button */}
@@ -86,6 +87,10 @@ const Hero = () => {
             </motion.button>
           </div>
         </div>
+      </div>
+      
+      <div className="flex-1 flex justify-center items-center w-full md:w-auto mt-8 md:mt-0 h-full">
+        <TechSphere />
       </div>
       
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
