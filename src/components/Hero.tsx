@@ -38,7 +38,7 @@ const Hero = () => {
     <motion.section
       ref={ref}
       id="home"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center relative overflow-hidden pt-16 md:pt-0"
       initial="hidden"
       animate={controls}
       variants={sectionVariants}
