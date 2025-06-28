@@ -18,19 +18,13 @@ const Contact = () => {
 
   useEffect(() => {
     if (step === 1 && gitAddRef.current) gitAddRef.current.focus();
-    if (step === 2 && gitCommitRef.current) {
-      gitCommitRef.current.focus();
-      gitCommitRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    if (step === 3 && gitPushRef.current) {
-      gitPushRef.current.focus();
-      gitPushRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    if (step === 2 && gitCommitRef.current) gitCommitRef.current.focus();
+    if (step === 3 && gitPushRef.current) gitPushRef.current.focus();
   }, [step]);
 
-  // Regex for extracting quoted string
+  // Regex for extracting quoted string (accepts straight and curly quotes)
   const extractQuoted = (input: string) => {
-    const match = input.match(/"([^"]*)"/);
+    const match = input.match(/[\"“”]([^\"“”]+)[\"“”]/);
     return match ? match[1] : '';
   };
 
@@ -38,7 +32,7 @@ const Contact = () => {
   const handleGitAdd = (e: React.ChangeEvent<HTMLInputElement>) => {
     setGitAdd(e.target.value);
     const trimmed = e.target.value.trim();
-    if (/^git add \. "[^"]+"$/.test(trimmed)) {
+    if (/^git add \. [\"“”][^\"“”]+[\"“”]$/.test(trimmed)) {
       setMessage(extractQuoted(trimmed));
       setStep(2);
     } else {
@@ -51,7 +45,7 @@ const Contact = () => {
   const handleGitCommit = (e: React.ChangeEvent<HTMLInputElement>) => {
     setGitCommit(e.target.value);
     const trimmed = e.target.value.trim();
-    if (/^git commit -m "[^"]+"$/.test(trimmed)) {
+    if (/^git commit -m [\"“”][^\"“”]+[\"“”]$/.test(trimmed)) {
       setEmail(extractQuoted(trimmed));
       setStep(3);
     } else {
@@ -125,6 +119,9 @@ const Contact = () => {
               onChange={handleGitAdd}
               disabled={step > 1}
               required
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
             />
             {step >= 2 && (
               <input
@@ -136,6 +133,9 @@ const Contact = () => {
                 onChange={handleGitCommit}
                 disabled={step > 2}
                 required
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck={false}
               />
             )}
             {step >= 3 && (
@@ -148,6 +148,9 @@ const Contact = () => {
                 onChange={handleGitPush}
                 disabled={step > 3}
                 required
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck={false}
               />
             )}
             {step === 4 && (
