@@ -66,10 +66,7 @@ const Hero = () => {
           If you're working on something real, let's connect.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in delay-1000">
-            {/* Book a meet button */}
-            
-            {/* Get in touch button */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in delay-1000 mb-8">
           <div className="relative inline-block rounded-2xl">
             <div className="absolute inset-0 rounded-2xl p-[1.5px]"></div>
             <motion.button
@@ -89,7 +86,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="flex-1 flex justify-center items-center w-full md:w-auto mt-4 md:mt-0 h-full">
+      <div className="flex-1 flex justify-center items-center w-full md:w-auto mt-8 md:mt-0 h-full">
         <TechSphere />
       </div>
       
