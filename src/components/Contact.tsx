@@ -18,8 +18,14 @@ const Contact = () => {
 
   useEffect(() => {
     if (step === 1 && gitAddRef.current) gitAddRef.current.focus();
-    if (step === 2 && gitCommitRef.current) gitCommitRef.current.focus();
-    if (step === 3 && gitPushRef.current) gitPushRef.current.focus();
+    if (step === 2 && gitCommitRef.current) {
+      gitCommitRef.current.focus();
+      gitCommitRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    if (step === 3 && gitPushRef.current) {
+      gitPushRef.current.focus();
+      gitPushRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }, [step]);
 
   // Regex for extracting quoted string

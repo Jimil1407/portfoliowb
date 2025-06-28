@@ -50,28 +50,28 @@ const ProofOfWork = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 gap-6 w-full max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-3xl mx-auto px-2">
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className="group relative bg-black rounded-2xl overflow-hidden p-[2px] animate-fade-in w-full aspect-square"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group relative bg-black rounded-2xl overflow-hidden p-[2px] w-full aspect-square animate-card-fade-in-up"
+              style={{ animationDelay: `${index * 120}ms` }}
             >
               {/* Animated Gradient Border */}
               <div className="absolute inset-0 rounded-2xl pointer-events-none z-0 animate-gradient-move bg-[conic-gradient(from_0deg,_#fff_0deg,_#f59e42_90deg,_#fff_180deg,_#f59e42_270deg,_#fff_360deg)]"></div>
               {/* Card Content */}
-              <div className="relative z-10 bg-black rounded-2xl h-full flex flex-col p-4">
+              <div className="relative z-10 bg-black rounded-2xl h-full flex flex-col p-3 sm:p-4">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center text-xl border border-gray-800">
                       {project.icon}
                     </div>
-                    <h3 className="text-xl font-extrabold text-white">
+                    <h3 className="text-base sm:text-xl font-extrabold text-white">
                       {project.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-gray-300 mb-4 leading-relaxed text-left text-sm">{project.description}</p>
+                <p className="text-gray-300 mb-4 leading-relaxed text-left text-sm sm:text-base">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6 text-left">
                   {project.tech.map((tech) => (
                     <span 
