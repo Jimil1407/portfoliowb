@@ -77,7 +77,7 @@ const Journey = () => {
               My Journey
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              From curiosity to creation - here's how my coding journey unfolded from 2022 to 2024
+              From curiosity to creation - here's how my coding journey unfolded from 2022 to 2025
             </p>
           </div>
 

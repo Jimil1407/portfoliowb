@@ -20,17 +20,17 @@ const About = () => {
               <h2 className="text-2xl font-bold text-white mb-6">My Story</h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Started coding in 2022, fell in love with the process of turning ideas into reality. 
-                From building simple websites to complex full-stack applications, I've been on a 
+                From building simple websites to complex machine learning models, I've been on a 
                 continuous learning journey.
               </p>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 I believe in learning by doing, breaking things, and finding creative solutions. 
-                When I'm not coding, you'll find me exploring new technologies, contributing to 
+                When I'm not coding, you'll find me exploring new technologies, recently started contributing to 
                 open source, or diving deep into computer science fundamentals.
               </p>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 My passion lies in creating user-centric applications that solve real-world problems.
-                I'm particularly interested in web development, blockchain technology, and building
+                I'm particularly interested in web development, machine learning, deep learning, and building
                 scalable systems that can make a difference.
               </p>
             </div>

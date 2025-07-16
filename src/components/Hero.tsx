@@ -42,7 +42,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-base sm:text-lg md:text-2xl text-gray-300 mb-3 md:mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-500">
-          22, interested in ML, DevOps ,coding, anything which brings a change. My other interests also include cricket, football
+          22, interested in ML, DevOps ,coding, anything which brings a change. My other interests include cricket, football
           & geopolitics. 
 
         </p>
