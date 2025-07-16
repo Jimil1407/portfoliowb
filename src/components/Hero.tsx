@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import TechSphere from './TechSphere';
 
 const Hero = () => {
-  const [text, setText] = useState('');
   const fullText = "Hi, I'm Jimil";
   
   const controls = useAnimation();
@@ -20,19 +19,6 @@ const Hero = () => {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
-
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      setText(fullText.slice(0, index));
-      index++;
-      if (index > fullText.length) {
-        clearInterval(timer);
-      }
-    }, 100);
-    
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <motion.section
@@ -52,8 +38,7 @@ const Hero = () => {
       
       <div className="relative z-10 flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left px-6 h-full self-center mx-auto md:pl-12">
         <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6 animate-fade-in">
-          {text}
-          <span className="animate-pulse">|</span>
+          {fullText}
         </h1>
         
         <p className="text-base sm:text-lg md:text-2xl text-gray-300 mb-3 md:mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-500">
