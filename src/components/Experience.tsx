@@ -6,7 +6,7 @@ const Experience = () => {
   const experiences = [
     {
       logo: "https://www.ey.com/content/dam/ey-unified-site/ey-com/en-in/generic/images/ey-logo-black.png",
-      title: "SDE - Ernst & Young",
+      title: "Technical Consultant - Ernst & Young",
       description: "Building full stack apps",
       period: "October 2025 - present"
     },

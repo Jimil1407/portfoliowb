@@ -39,20 +39,27 @@ const Journey = () => {
       year: "2022",
       title: "The Beginning",
       description: "Started my coding journey with curiosity and determination. Learned the fundamentals of programming and discovered my passion for web development.",
-      highlights: ["First 'Hello World'", "HTML/CSS Basics", "JavaScript Introduction"]
+      highlights: ["First 'Hello World'", "Python Basics", "JavaScript Introduction"]
     },
     {
       year: "2023", 
       title: "Building Foundations",
-      description: "Dove deeper into modern web technologies. Built my first projects and started understanding the importance of clean, maintainable code.",
-      highlights: ["React Mastery", "Node.js Backend", "Database Design", "Git/GitHub"]
+      description: "Dove deeper into modern web technologies. Built my first projects and started understanding the importance of clean, maintainable code. Started learing about DSA and Java.",
+      highlights: ["React Mastery", "DSA", "Node.js Backend", "Database Design", "Git/GitHub", "Java"]
     },
     {
       year: "2024",
       title: "Growing & Creating",
-      description: "Focused on creating meaningful projects and contributing to open source. Enhanced my skills in full-stack development and modern frameworks.",
-      highlights: ["Full-Stack Projects", "Open Source Contributions", "Advanced React Patterns", "Cloud Technologies"]
+      description: "Focused on creating meaningful projects and building ML models. Enhanced my skills in machine learning and modern frameworks.",
+      highlights: ["Full-Stack Projects", "Machine Learning", "Deep Learning","NLP", "Next.js", "Cloud Technologies"]
+    },
+    {
+      year: "2025",
+      title: "Landing a Job & Polishing Skills",
+      description: "Landed a job as a Technical Consultant at Ernst & Young. Started working on scalable projects and building ML models.",
+      highlights: ["DevOps", "Machine Learning", "Deep Learning","NLP", "Next.js", "Cloud Technologies", "Scalability"]
     }
+
   ];
 
   return (
