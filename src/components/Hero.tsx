@@ -63,7 +63,7 @@ const Hero = () => {
         </p>
         
         <p className="text-sm sm:text-base md:text-lg text-gray-400 mb-8 md:mb-12 animate-fade-in delay-700">
-          If you're working on something real, let's connect.
+          Let's connect if you're interested in my work.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in delay-1000 mb-8">
