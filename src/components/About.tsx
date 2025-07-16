@@ -52,12 +52,12 @@ const About = () => {
             
             <p className="text-gray-300 mb-6 leading-relaxed">
               Started coding in 2022, fell in love with the process of turning ideas into reality. 
-              From building simple websites to complex full-stack applications, I've been on a 
+              From building simple websites to machine learning models, I've been on a 
               continuous learning journey.
             </p>
             <p className="text-gray-300 mb-6 leading-relaxed">
               I believe in learning by doing, breaking things, and finding creative solutions. 
-              When I'm not coding, you'll find me exploring new technologies, contributing to 
+              When I'm not coding, you'll find me exploring new technologies, recently started contributing to 
               open source, or diving deep into computer science fundamentals.
             </p>
             <motion.div
